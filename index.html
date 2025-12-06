@@ -130,7 +130,7 @@
                     <button class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-stone-900 whitespace-nowrap" onclick="setTab('Pure VC', this)">Pure VC</button>
                     <button class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-stone-900 whitespace-nowrap" onclick="setTab('Corporate', this)">Corporate VC</button>
                     <button class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-stone-900 whitespace-nowrap" onclick="setTab('Creation', this)">Venture Creation</button>
-                    <button class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-stone-900 whitespace-nowrap" onclick="setTab('Lifecycle', this)">Lifecycle / Crossover</button>
+                    <button class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-stone-900 whitespace-nowrap" onclick="setTab('Crossover', this)">Crossover</button>
                     <button class="tab-btn px-4 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-stone-900 whitespace-nowrap" onclick="setTab('Accelerator', this)">Accelerator / Incubator</button>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                             <option value="TechBio">TechBio</option>
                             <option value="SynBio">SynBio / Synthetic Biology</option>
                             <option value="MedTech">MedTech / Devices</option>
-                            <option value="Health Tech">Health Tech / Services</option>
+                            <option value="Digital Health">Digital Health / Services</option>
                             <option value="Diagnostics">Diagnostics</option>
                         </select>
                     </div>
@@ -186,7 +186,7 @@
                     <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-teal-100 border border-teal-200 mr-1"></span>Pure VC</span>
                     <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-100 border border-blue-200 mr-1"></span>Corporate VC</span>
                     <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-purple-100 border border-purple-200 mr-1"></span>Venture Creation</span>
-                    <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-orange-100 border border-orange-200 mr-1"></span>Lifecycle</span>
+                    <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-orange-100 border border-orange-200 mr-1"></span>Crossover</span>
                     <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-yellow-100 border border-yellow-200 mr-1"></span>Accelerator</span>
                 </div>
             </div>
@@ -231,72 +231,72 @@
         
         const vcData = [
             // --- TIER 1: The Giants & Life Science Specialists ---
-            { name: "OrbiMed", location: "New York, NY", website: "https://www.orbimed.com", focus: ["Biotech", "MedTech", "Health Tech"], aum: 18000, portfolio: "Adicet, PMV Pharma, SpringWorks", aumStr: "$18B+", stage: "Seed to Growth", type: "Lifecycle / Crossover" },
-            { name: "RA Capital Management", location: "Boston, MA", website: "https://www.racap.com", focus: ["Biotech", "TechBio"], aum: 10000, portfolio: "Arvinas, Nkarta, Tyra Biosciences", aumStr: "$10B+", stage: "Seed to Crossover", type: "Lifecycle / Crossover" },
+            { name: "OrbiMed", location: "New York, NY", website: "https://www.orbimed.com", focus: ["Biotech", "MedTech", "Digital Health"], aum: 18000, portfolio: "Adicet, PMV Pharma, SpringWorks", aumStr: "$18B+", stage: "Seed to Growth", type: "Crossover" },
+            { name: "RA Capital Management", location: "Boston, MA", website: "https://www.racap.com", focus: ["Biotech", "TechBio"], aum: 10000, portfolio: "Arvinas, Nkarta, Tyra Biosciences", aumStr: "$10B+", stage: "Seed to Crossover", type: "Crossover" },
             { name: "Flagship Pioneering", location: "Cambridge, MA", website: "https://www.flagshippioneering.com", focus: ["Biotech", "TechBio", "SynBio"], aum: 9000, portfolio: "Moderna, Denali, Foghorn", aumStr: "$9B+", stage: "Venture Creation / Pre-Seed", type: "Venture Creation" },
             { name: "ARCH Venture Partners", location: "Chicago, IL", website: "https://www.archventure.com", focus: ["Biotech", "TechBio"], aum: 8000, portfolio: "Illumina, Alnylam, Grail, Lyell", aumStr: "$8B+", stage: "Seed to Early Stage", type: "Pure VC" },
             { name: "Third Rock Ventures", location: "Boston, MA", website: "https://www.thirdrockventures.com", focus: ["Biotech"], aum: 3800, portfolio: "Sage, Agios, Blueprint Medicines", aumStr: "$3.8B", stage: "Venture Creation / Series A", type: "Venture Creation" },
             { name: "Versant Ventures", location: "San Francisco, CA", website: "https://www.versantventures.com", focus: ["Biotech", "TechBio"], aum: 3200, portfolio: "CRISPR Tx, Monte Rosa, Chinook", aumStr: "$3.2B", stage: "Incubation / Series A", type: "Pure VC" },
             { name: "5AM Ventures", location: "San Francisco, CA", website: "https://www.5amventures.com", focus: ["Biotech"], aum: 2200, portfolio: "Vcinity, Chrono, Ideaya", aumStr: "$2.2B", stage: "Seed / Series A", type: "Pure VC" },
             { name: "Atlas Venture", location: "Cambridge, MA", website: "https://www.atlasventure.com", focus: ["Biotech"], aum: 2500, portfolio: "Intellia, Generation Bio, Dyne", aumStr: "$2.5B", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "Venrock", location: "Palo Alto, CA", website: "https://www.venrock.com", focus: ["Health Tech", "Biotech"], aum: 3000, portfolio: "Illumina, 10x Genomics, Devoted Health", aumStr: "$3B+", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Venrock", location: "Palo Alto, CA", website: "https://www.venrock.com", focus: ["Digital Health", "Biotech"], aum: 3000, portfolio: "Illumina, 10x Genomics, Devoted Health", aumStr: "$3B+", stage: "Seed / Series A", type: "Pure VC" },
             { name: "Lux Capital", location: "New York, NY", website: "https://www.luxcapital.com", focus: ["TechBio", "Biotech"], aum: 5000, portfolio: "Recursion, Eikon, Benchling", aumStr: "$5B", stage: "Seed to Growth", type: "Pure VC" },
-            { name: "Andreessen Horowitz (a16z Bio)", location: "Menlo Park, CA", website: "https://a16z.com/bio-health/", focus: ["TechBio", "Health Tech", "Biotech"], aum: 35000, portfolio: "Freenome, BioAge, Devoted Health", aumStr: "$35B (Total)", stage: "Seed to Growth", type: "Pure VC" },
-            { name: "GV (Google Ventures)", location: "Mountain View, CA", website: "https://www.gv.com", focus: ["Biotech", "Health Tech", "TechBio"], aum: 8000, portfolio: "Flatiron, One Medical, Editas", aumStr: "$8B+", stage: "Seed to Growth", type: "Corporate VC" },
-            { name: "F-Prime Capital", location: "Cambridge, MA", website: "https://fprimecapital.com", focus: ["Biotech", "Health Tech"], aum: 3000, portfolio: "Denali, Beam, Devoted Health", aumStr: "$3B+", stage: "Early Stage", type: "Pure VC" },
-            { name: "Canaan Partners", location: "Menlo Park, CA", website: "https://www.canaan.com", focus: ["Biotech", "Health Tech"], aum: 5000, portfolio: "Arvinas, Rallybio, Tyra", aumStr: "$5B", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "General Catalyst", location: "Cambridge, MA", website: "https://www.generalcatalyst.com", focus: ["Health Tech", "TechBio"], aum: 25000, portfolio: "Livongo, Oscar, Commure", aumStr: "$25B (Total)", stage: "Seed to Growth", type: "Pure VC" },
-            { name: "Khosla Ventures", location: "Menlo Park, CA", website: "https://www.khoslaventures.com", focus: ["TechBio", "Diagnostics", "Health Tech"], aum: 15000, portfolio: "Guardant, Color, Oscar", aumStr: "$15B (Total)", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Andreessen Horowitz (a16z Bio)", location: "Menlo Park, CA", website: "https://a16z.com/bio-health/", focus: ["TechBio", "Digital Health", "Biotech"], aum: 35000, portfolio: "Freenome, BioAge, Devoted Health", aumStr: "$35B (Total)", stage: "Seed to Growth", type: "Pure VC" },
+            { name: "GV (Google Ventures)", location: "Mountain View, CA", website: "https://www.gv.com", focus: ["Biotech", "Digital Health", "TechBio"], aum: 8000, portfolio: "Flatiron, One Medical, Editas", aumStr: "$8B+", stage: "Seed to Growth", type: "Corporate VC" },
+            { name: "F-Prime Capital", location: "Cambridge, MA", website: "https://fprimecapital.com", focus: ["Biotech", "Digital Health"], aum: 3000, portfolio: "Denali, Beam, Devoted Health", aumStr: "$3B+", stage: "Early Stage", type: "Pure VC" },
+            { name: "Canaan Partners", location: "Menlo Park, CA", website: "https://www.canaan.com", focus: ["Biotech", "Digital Health"], aum: 5000, portfolio: "Arvinas, Rallybio, Tyra", aumStr: "$5B", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "General Catalyst", location: "Cambridge, MA", website: "https://www.generalcatalyst.com", focus: ["Digital Health", "TechBio"], aum: 25000, portfolio: "Livongo, Oscar, Commure", aumStr: "$25B (Total)", stage: "Seed to Growth", type: "Pure VC" },
+            { name: "Khosla Ventures", location: "Menlo Park, CA", website: "https://www.khoslaventures.com", focus: ["TechBio", "Diagnostics", "Digital Health"], aum: 15000, portfolio: "Guardant, Color, Oscar", aumStr: "$15B (Total)", stage: "Seed / Series A", type: "Pure VC" },
             { name: "Founders Fund", location: "San Francisco, CA", website: "https://foundersfund.com", focus: ["TechBio", "Biotech"], aum: 11000, portfolio: "Compass Pathways, Varda, Neuralink", aumStr: "$11B (Total)", stage: "Seed to Growth", type: "Pure VC" },
-            { name: "8VC", location: "Austin, TX", website: "https://8vc.com", focus: ["TechBio", "Health Tech"], aum: 6000, portfolio: "Oscar, Ro, Guardant", aumStr: "$6B", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "8VC", location: "Austin, TX", website: "https://8vc.com", focus: ["TechBio", "Digital Health"], aum: 6000, portfolio: "Oscar, Ro, Guardant", aumStr: "$6B", stage: "Seed / Series A", type: "Pure VC" },
             { name: "DCVC (Data Collective)", location: "San Francisco, CA", website: "https://www.dcvc.com", focus: ["TechBio"], aum: 3000, portfolio: "Recursion, AbCellera, Karius", aumStr: "$3B", stage: "Seed / Series A", type: "Pure VC" },
             { name: "Sofinnova Investments", location: "Menlo Park, CA", website: "https://www.sofinnovavc.com", focus: ["Biotech"], aum: 2800, portfolio: "Apellis, Karuna, Natera", aumStr: "$2.8B", stage: "Clinical Stage / Series B", type: "Pure VC" },
             { name: "Vida Ventures", location: "Boston, MA", website: "https://vidaventures.com", focus: ["Biotech"], aum: 1700, portfolio: "Kymera, Praxis, Centessa", aumStr: "$1.7B", stage: "Series A to Crossover", type: "Pure VC" },
-            { name: "Foresite Capital", location: "San Francisco, CA", website: "https://www.foresitecapital.com", focus: ["TechBio", "Biotech"], aum: 3500, portfolio: "10x Genomics, Relay, Kinnate", aumStr: "$3.5B", stage: "Growth / Crossover", type: "Lifecycle / Crossover" },
+            { name: "Foresite Capital", location: "San Francisco, CA", website: "https://www.foresitecapital.com", focus: ["TechBio", "Biotech"], aum: 3500, portfolio: "10x Genomics, Relay, Kinnate", aumStr: "$3.5B", stage: "Growth / Crossover", type: "Crossover" },
             { name: "Samsara BioCapital", location: "Palo Alto, CA", website: "https://www.samsaracap.com", focus: ["Biotech"], aum: 1000, portfolio: "Nkarta, Jounce, Sutro", aumStr: "$1B+", stage: "Series A / B", type: "Pure VC" },
-            { name: "Casdin Capital", location: "New York, NY", website: "https://www.casdincapital.com", focus: ["Biotech", "TechBio"], aum: 3000, portfolio: "Invitae, Relay, SomaLogic", aumStr: "$3B+", stage: "Growth / Crossover", type: "Lifecycle / Crossover" },
+            { name: "Casdin Capital", location: "New York, NY", website: "https://www.casdincapital.com", focus: ["Biotech", "TechBio"], aum: 3000, portfolio: "Invitae, Relay, SomaLogic", aumStr: "$3B+", stage: "Growth / Crossover", type: "Crossover" },
             { name: "Section 32", location: "San Diego, CA", website: "https://www.section32.com", focus: ["TechBio", "Diagnostics"], aum: 1000, portfolio: "Relay, Thrive, Vir", aumStr: "$1B+", stage: "Series A / B", type: "Pure VC" },
-            { name: "Obvious Ventures", location: "San Francisco, CA", website: "https://obvious.com", focus: ["Health Tech", "TechBio"], aum: 1000, portfolio: "Virta, Recursion, Incredible Health", aumStr: "$1B+", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Obvious Ventures", location: "San Francisco, CA", website: "https://obvious.com", focus: ["Digital Health", "TechBio"], aum: 1000, portfolio: "Virta, Recursion, Incredible Health", aumStr: "$1B+", stage: "Seed / Series A", type: "Pure VC" },
             { name: "Leaps by Bayer", location: "Cambridge, MA", website: "https://leaps.bayer.com", focus: ["Biotech", "SynBio"], aum: 1500, portfolio: "BlueRock, Joyn, Khloris", aumStr: "$1.5B", stage: "Series A", type: "Corporate VC" },
-            { name: "New Enterprise Associates (NEA)", location: "Menlo Park, CA", website: "https://www.nea.com", focus: ["Biotech", "Health Tech", "TechBio"], aum: 25000, portfolio: "Tempus, Crispr Tx, Verve", aumStr: "$25B (Total)", stage: "Multi-stage", type: "Pure VC" },
+            { name: "New Enterprise Associates (NEA)", location: "Menlo Park, CA", website: "https://www.nea.com", focus: ["Biotech", "Digital Health", "TechBio"], aum: 25000, portfolio: "Tempus, Crispr Tx, Verve", aumStr: "$25B (Total)", stage: "Multi-stage", type: "Pure VC" },
             
             // --- TIER 2: Boutiques, TechBio Specialists, and Emerging Managers ---
             { name: "Compound", location: "New York, NY", website: "https://compound.vc", focus: ["TechBio", "Deep Tech"], aum: 150, portfolio: "Wayve, Varda, Meatable", aumStr: "$150M+", stage: "Seed", type: "Pure VC" },
             { name: "Curie.Bio", location: "Cambridge, MA", website: "https://curie.bio", focus: ["Biotech", "TechBio"], aum: 500, portfolio: "Forward, Decrypt, Founder-led Bio", aumStr: "$500M+", stage: "Seed / Incubation", type: "Venture Creation" },
             { name: "SciFounders", location: "San Francisco, CA", website: "https://www.scifounders.com", focus: ["Biotech", "TechBio", "SynBio"], aum: 50, portfolio: "Gilgamesh, Harlow, Vernal", aumStr: "N/A (Early Stage)", stage: "Pre-Seed to Series A", type: "Pure VC" },
-            { name: "The Venture Collective", location: "New York, NY", website: "https://www.theventurecollective.com", focus: ["Health Tech", "Biotech"], aum: 150, portfolio: "Oshi Health, Helper, Almond", aumStr: "$150M+", stage: "Pre-Seed / Seed", type: "Pure VC" },
+            { name: "The Venture Collective", location: "New York, NY", website: "https://www.theventurecollective.com", focus: ["Digital Health", "Biotech"], aum: 150, portfolio: "Oshi Health, Helper, Almond", aumStr: "$150M+", stage: "Pre-Seed / Seed", type: "Pure VC" },
             { name: "Cantos", location: "San Francisco, CA", website: "https://cantos.vc", focus: ["TechBio", "SynBio", "Biotech"], aum: 150, portfolio: "Solugen, Mission Barns, Humane", aumStr: "$150M+", stage: "Pre-Seed / Seed", type: "Pure VC" },
             { name: "BEVC", location: "San Francisco, CA", website: "https://www.bevc.com", focus: ["Biotech", "TechBio"], aum: 50, portfolio: "Montara, PinkDx, Radar Therapeutics", aumStr: "N/A (Early Stage)", stage: "Pre-Seed to Series A", type: "Pure VC" },
             { name: "KdT Ventures", location: "Austin, TX", website: "https://kdtvc.com", focus: ["TechBio", "SynBio"], aum: 150, portfolio: "Pathos, Enveda, Solugen", aumStr: "$150M+", stage: "Seed", type: "Pure VC" },
             { name: "Fifty Years", location: "San Francisco, CA", website: "https://fiftyyears.com", focus: ["TechBio", "Deep Tech"], aum: 100, portfolio: "Solugen, Memphis Meats, Opentrons", aumStr: "$100M+", stage: "Pre-Seed / Seed", type: "Pure VC" },
-            { name: "NFX", location: "San Francisco, CA", website: "https://www.nfx.com", focus: ["TechBio", "Health Tech", "Biotech"], aum: 1500, portfolio: "Mammoth Biosciences, Twist Biosciences, Centivax, Mana.bio", aumStr: "$1.5B (Total)", stage: "Pre-Seed / Seed", type: "Pure VC" },
+            { name: "NFX", location: "San Francisco, CA", website: "https://www.nfx.com", focus: ["TechBio", "Digital Health", "Biotech"], aum: 1500, portfolio: "Mammoth Biosciences, Twist Biosciences, Centivax, Mana.bio", aumStr: "$1.5B (Total)", stage: "Pre-Seed / Seed", type: "Pure VC" },
             { name: "Refactor Capital", location: "Burlingame, CA", website: "https://www.refactor.com", focus: ["TechBio", "Deep Tech"], aum: 50, portfolio: "Scribe, Solugen, Manifold", aumStr: "$50M+", stage: "Seed", type: "Pure VC" },
-            { name: "Healthy Ventures", location: "San Francisco, CA", website: "https://healthy.vc", focus: ["Health Tech", "TechBio"], aum: 100, portfolio: "Health Gorilla, Abridge, Mocingbird", aumStr: "$100M", stage: "Seed", type: "Pure VC" },
+            { name: "Healthy Ventures", location: "San Francisco, CA", website: "https://healthy.vc", focus: ["Digital Health", "TechBio"], aum: 100, portfolio: "Health Gorilla, Abridge, Mocingbird", aumStr: "$100M", stage: "Seed", type: "Pure VC" },
             { name: "Dimension", location: "San Francisco, CA", website: "https://dimensioncap.com", focus: ["TechBio"], aum: 350, portfolio: "Enveda, Kaleidoscope, Laminar", aumStr: "$350M", stage: "Series A / B", type: "Pure VC" },
             { name: "Alix Ventures", location: "San Francisco, CA", website: "https://alix.vc", focus: ["Biotech", "TechBio"], aum: 100, portfolio: "Hifibio, Biosplice,ixlayer", aumStr: "N/A", stage: "Seed", type: "Pure VC" },
             { name: "Civilization Ventures", location: "San Francisco, CA", website: "https://civilizationventures.com", focus: ["TechBio", "Biotech"], aum: 200, portfolio: "Singular Genomics, Rocket, Palleon", aumStr: "$200M+", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "Tau Ventures", location: "Palo Alto, CA", website: "https://tauventures.com", focus: ["Health Tech", "AI"], aum: 75, portfolio: "Iterative Scopes, Elemental", aumStr: "$75M", stage: "Seed", type: "Pure VC" },
+            { name: "Tau Ventures", location: "Palo Alto, CA", website: "https://tauventures.com", focus: ["Digital Health", "AI"], aum: 75, portfolio: "Iterative Scopes, Elemental", aumStr: "$75M", stage: "Seed", type: "Pure VC" },
             { name: "Pillar VC", location: "Boston, MA", website: "https://www.pillar.vc", focus: ["Biotech", "TechBio"], aum: 300, portfolio: "PathAI, Asimov, Hometap", aumStr: "$300M", stage: "Seed", type: "Pure VC" },
-            { name: "True Ventures", location: "San Francisco, CA", website: "https://trueventures.com", focus: ["Health Tech", "TechBio"], aum: 3000, portfolio: "Pendulum, Fitbit, Pelago", aumStr: "$3B (Total)", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "Susa Ventures", location: "San Francisco, CA", website: "https://susaventures.com", focus: ["Health Tech", "TechBio"], aum: 600, portfolio: "Medely, Photon, June", aumStr: "$600M", stage: "Seed", type: "Pure VC" },
-            { name: "Collaborative Fund", location: "New York, NY", website: "https://collaborativefund.com", focus: ["Health Tech", "Biotech"], aum: 500, portfolio: "Ginkgo Bioworks, Lovevery", aumStr: "$500M", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "1984 Ventures", location: "San Francisco, CA", website: "https://1984.vc", focus: ["Health Tech", "TechBio"], aum: 100, portfolio: "DeepScribe, Notable", aumStr: "$100M", stage: "Seed", type: "Pure VC" },
-            { name: "Eniac Ventures", location: "New York, NY", website: "https://eniac.vc", focus: ["TechBio", "Health Tech"], aum: 200, portfolio: "BioBeats, Hinge Health (Seed)", aumStr: "$200M", stage: "Seed", type: "Pure VC" },
-            { name: "Lerer Hippeau", location: "New York, NY", website: "https://www.lererhippeau.com", focus: ["Health Tech", "TechBio"], aum: 1200, portfolio: "K Health, Oscar, Ro", aumStr: "$1.2B", stage: "Seed", type: "Pure VC" },
-            { name: "BoxGroup", location: "New York, NY", website: "https://boxgroup.com", focus: ["Health Tech", "TechBio"], aum: 500, portfolio: "Ro, Flatiron, PillPack", aumStr: "$500M", stage: "Pre-Seed / Seed", type: "Pure VC" },
-            { name: "Village Global", location: "San Francisco, CA", website: "https://www.villageglobal.vc", focus: ["TechBio", "Health Tech"], aum: 400, portfolio: "Paradigm, Enveda", aumStr: "$400M", stage: "Pre-Seed / Seed", type: "Pure VC" },
+            { name: "True Ventures", location: "San Francisco, CA", website: "https://trueventures.com", focus: ["Digital Health", "TechBio"], aum: 3000, portfolio: "Pendulum, Fitbit, Pelago", aumStr: "$3B (Total)", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Susa Ventures", location: "San Francisco, CA", website: "https://susaventures.com", focus: ["Digital Health", "TechBio"], aum: 600, portfolio: "Medely, Photon, June", aumStr: "$600M", stage: "Seed", type: "Pure VC" },
+            { name: "Collaborative Fund", location: "New York, NY", website: "https://collaborativefund.com", focus: ["Digital Health", "Biotech"], aum: 500, portfolio: "Ginkgo Bioworks, Lovevery", aumStr: "$500M", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "1984 Ventures", location: "San Francisco, CA", website: "https://1984.vc", focus: ["Digital Health", "TechBio"], aum: 100, portfolio: "DeepScribe, Notable", aumStr: "$100M", stage: "Seed", type: "Pure VC" },
+            { name: "Eniac Ventures", location: "New York, NY", website: "https://eniac.vc", focus: ["TechBio", "Digital Health"], aum: 200, portfolio: "BioBeats, Hinge Health (Seed)", aumStr: "$200M", stage: "Seed", type: "Pure VC" },
+            { name: "Lerer Hippeau", location: "New York, NY", website: "https://www.lererhippeau.com", focus: ["Digital Health", "TechBio"], aum: 1200, portfolio: "K Health, Oscar, Ro", aumStr: "$1.2B", stage: "Seed", type: "Pure VC" },
+            { name: "BoxGroup", location: "New York, NY", website: "https://boxgroup.com", focus: ["Digital Health", "TechBio"], aum: 500, portfolio: "Ro, Flatiron, PillPack", aumStr: "$500M", stage: "Pre-Seed / Seed", type: "Pure VC" },
+            { name: "Village Global", location: "San Francisco, CA", website: "https://www.villageglobal.vc", focus: ["TechBio", "Digital Health"], aum: 400, portfolio: "Paradigm, Enveda", aumStr: "$400M", stage: "Pre-Seed / Seed", type: "Pure VC" },
             { name: "Outset Capital", location: "San Francisco, CA", website: "https://outsetcapital.com", focus: ["TechBio", "Deep Tech"], aum: 50, portfolio: "Earth, Science", aumStr: "$50M", stage: "Pre-Seed", type: "Pure VC" },
 
             // --- TIER 3: Generalists with Strong Health Practice & Corp VC ---
-            { name: "Matrix Partners", location: "Boston, MA", website: "https://www.matrixpartners.com", focus: ["Health Tech", "TechBio"], aum: 4000, portfolio: "Zendesk, Hubspot (Gen focus)", aumStr: "$4B", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "Menlo Ventures", location: "Menlo Park, CA", website: "https://www.menlov.com", focus: ["Health Tech", "TechBio"], aum: 5000, portfolio: "Gilead, PillPack, Riva", aumStr: "$5B", stage: "Series A / B", type: "Pure VC" },
-            { name: "CRV", location: "Palo Alto, CA", website: "https://www.crv.com", focus: ["Health Tech", "TechBio"], aum: 4300, portfolio: "PillPack, Color, Viz.ai", aumStr: "$4.3B", stage: "Series A", type: "Pure VC" },
-            { name: "Greylock Partners", location: "Menlo Park, CA", website: "https://www.greylock.com", focus: ["Health Tech", "TechBio"], aum: 3500, portfolio: "Cleo, Solv, Lyra", aumStr: "$3.5B", stage: "Seed / Series A", type: "Pure VC" },
-            { name: "Kleiner Perkins", location: "Menlo Park, CA", website: "https://www.kleinerperkins.com", focus: ["Health Tech", "Biotech"], aum: 8000, portfolio: "Genentech, Modern Health, Viz.ai", aumStr: "$8B", stage: "Series A / B", type: "Pure VC" },
-            { name: "Mayfield Fund", location: "Menlo Park, CA", website: "https://www.mayfield.com", focus: ["Health Tech", "TechBio"], aum: 2500, portfolio: "Mammoth, Mission Bio, Qventus", aumStr: "$2.5B", stage: "Early Stage", type: "Pure VC" },
-            { name: "Bessemer Venture Partners", location: "San Francisco, CA", website: "https://www.bvp.com", focus: ["Health Tech", "Biotech"], aum: 20000, portfolio: "Hinge Health, Qventus, Aspen Rx", aumStr: "$20B", stage: "Multi-stage", type: "Pure VC" },
-            { name: "Norwest Venture Partners", location: "Palo Alto, CA", website: "https://www.nvp.com", focus: ["Health Tech", "Biotech"], aum: 12500, portfolio: "Omada, iRhythm, Silk Road", aumStr: "$12.5B", stage: "Multi-stage", type: "Pure VC" },
-            { name: "Polaris Partners", location: "Boston, MA", website: "https://www.polarispartners.com", focus: ["Biotech", "Health Tech"], aum: 5000, portfolio: "Schrodinger, Alector, KSQ", aumStr: "$5B", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Matrix Partners", location: "Boston, MA", website: "https://www.matrixpartners.com", focus: ["Digital Health", "TechBio"], aum: 4000, portfolio: "Zendesk, Hubspot (Gen focus)", aumStr: "$4B", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Menlo Ventures", location: "Menlo Park, CA", website: "https://www.menlov.com", focus: ["Digital Health", "TechBio"], aum: 5000, portfolio: "Gilead, PillPack, Riva", aumStr: "$5B", stage: "Series A / B", type: "Pure VC" },
+            { name: "CRV", location: "Palo Alto, CA", website: "https://www.crv.com", focus: ["Digital Health", "TechBio"], aum: 4300, portfolio: "PillPack, Color, Viz.ai", aumStr: "$4.3B", stage: "Series A", type: "Pure VC" },
+            { name: "Greylock Partners", location: "Menlo Park, CA", website: "https://www.greylock.com", focus: ["Digital Health", "TechBio"], aum: 3500, portfolio: "Cleo, Solv, Lyra", aumStr: "$3.5B", stage: "Seed / Series A", type: "Pure VC" },
+            { name: "Kleiner Perkins", location: "Menlo Park, CA", website: "https://www.kleinerperkins.com", focus: ["Digital Health", "Biotech"], aum: 8000, portfolio: "Genentech, Modern Health, Viz.ai", aumStr: "$8B", stage: "Series A / B", type: "Pure VC" },
+            { name: "Mayfield Fund", location: "Menlo Park, CA", website: "https://www.mayfield.com", focus: ["Digital Health", "TechBio"], aum: 2500, portfolio: "Mammoth, Mission Bio, Qventus", aumStr: "$2.5B", stage: "Early Stage", type: "Pure VC" },
+            { name: "Bessemer Venture Partners", location: "San Francisco, CA", website: "https://www.bvp.com", focus: ["Digital Health", "Biotech"], aum: 20000, portfolio: "Hinge Health, Qventus, Aspen Rx", aumStr: "$20B", stage: "Multi-stage", type: "Pure VC" },
+            { name: "Norwest Venture Partners", location: "Palo Alto, CA", website: "https://www.nvp.com", focus: ["Digital Health", "Biotech"], aum: 12500, portfolio: "Omada, iRhythm, Silk Road", aumStr: "$12.5B", stage: "Multi-stage", type: "Pure VC" },
+            { name: "Polaris Partners", location: "Boston, MA", website: "https://www.polarispartners.com", focus: ["Biotech", "Digital Health"], aum: 5000, portfolio: "Schrodinger, Alector, KSQ", aumStr: "$5B", stage: "Seed / Series A", type: "Pure VC" },
             { name: "The Column Group", location: "San Francisco, CA", website: "https://www.thecolumngroup.com", focus: ["Biotech"], aum: 2400, portfolio: "NGM, Peloton, Constellation", aumStr: "$2.4B", stage: "Series A", type: "Pure VC" },
             { name: "Alta Partners", location: "San Francisco, CA", website: "https://www.altapartners.com", focus: ["Biotech"], aum: 2500, portfolio: "Allakos, Vir, Tyra", aumStr: "$2.5B", stage: "Series A", type: "Pure VC" },
             { name: "Amgen Ventures", location: "Thousand Oaks, CA", website: "https://www.amgenventures.com", focus: ["Biotech"], aum: 1000, portfolio: "Arrakis, Neumora, Triumvira", aumStr: "$1B+", stage: "Strategic / Multi", type: "Corporate VC" },
@@ -315,13 +315,13 @@
             { name: "Domain Associates", location: "Princeton, NJ", website: "https://www.domainvc.com", focus: ["Biotech"], aum: 2800, portfolio: "Atea, Marinus, Orexigen", aumStr: "$2.8B", stage: "Early Stage", type: "Pure VC" },
             { name: "Abingworth", location: "Menlo Park, CA", website: "https://www.abingworth.com", focus: ["Biotech"], aum: 2000, portfolio: "Crispr Tx, GammaDelta, Vera", aumStr: "$2B", stage: "Early Stage", type: "Pure VC" },
             { name: "Pivotal bioVenture Partners", location: "San Francisco, CA", website: "https://www.pivotalbiovp.com", focus: ["Biotech"], aum: 500, portfolio: "Vaxcyte, Karuna, Evinature", aumStr: "$500M", stage: "Series A", type: "Pure VC" },
-            { name: "Eventide Asset Management", location: "Boston, MA", website: "https://www.eventideinvestments.com", focus: ["Biotech", "Health Tech"], aum: 6000, portfolio: "Prometheus, Vera, Ascendis", aumStr: "$6B (Total)", stage: "Multi-stage", type: "Lifecycle / Crossover" },
-            { name: "Flare Capital Partners", location: "Boston, MA", website: "https://www.flarecapital.com", focus: ["Health Tech"], aum: 600, portfolio: "Eden Health, Somatus, Aetion", aumStr: "$600M", stage: "Early Stage", type: "Pure VC" },
-            { name: "Define Ventures", location: "San Francisco, CA", website: "https://www.definevc.com", focus: ["Health Tech"], aum: 800, portfolio: "Folx, Hims & Hers, Unite Us", aumStr: "$800M", stage: "Early Stage", type: "Pure VC" },
-            { name: "7wireVentures", location: "Chicago, IL", website: "https://www.7wireventures.com", focus: ["Health Tech"], aum: 500, portfolio: "Livongo, Transcarent, NOCD", aumStr: "$500M", stage: "Series A / B", type: "Pure VC" },
-            { name: "Rock Health", location: "San Francisco, CA", website: "https://rockhealth.com", focus: ["Health Tech"], aum: 100, portfolio: "Omada, Benchling, Virta", aumStr: "N/A", stage: "Seed", type: "Pure VC" },
-            { name: "Pear VC", location: "Menlo Park, CA", website: "https://pear.vc", focus: ["TechBio", "Health Tech"], aum: 500, portfolio: "Guardant, Viz.ai", aumStr: "$500M", stage: "Pre-Seed / Seed", type: "Pure VC" },
-            { name: "Threshold Ventures", location: "Menlo Park, CA", website: "https://threshold.vc", focus: ["Health Tech", "TechBio"], aum: 2000, portfolio: "Livongo, Viz.ai, Talkspace", aumStr: "$2B", stage: "Series A", type: "Pure VC" },
+            { name: "Eventide Asset Management", location: "Boston, MA", website: "https://www.eventideinvestments.com", focus: ["Biotech", "Digital Health"], aum: 6000, portfolio: "Prometheus, Vera, Ascendis", aumStr: "$6B (Total)", stage: "Multi-stage", type: "Crossover" },
+            { name: "Flare Capital Partners", location: "Boston, MA", website: "https://www.flarecapital.com", focus: ["Digital Health"], aum: 600, portfolio: "Eden Health, Somatus, Aetion", aumStr: "$600M", stage: "Early Stage", type: "Pure VC" },
+            { name: "Define Ventures", location: "San Francisco, CA", website: "https://www.definevc.com", focus: ["Digital Health"], aum: 800, portfolio: "Folx, Hims & Hers, Unite Us", aumStr: "$800M", stage: "Early Stage", type: "Pure VC" },
+            { name: "7wireVentures", location: "Chicago, IL", website: "https://www.7wireventures.com", focus: ["Digital Health"], aum: 500, portfolio: "Livongo, Transcarent, NOCD", aumStr: "$500M", stage: "Series A / B", type: "Pure VC" },
+            { name: "Rock Health", location: "San Francisco, CA", website: "https://rockhealth.com", focus: ["Digital Health"], aum: 100, portfolio: "Omada, Benchling, Virta", aumStr: "N/A", stage: "Seed", type: "Pure VC" },
+            { name: "Pear VC", location: "Menlo Park, CA", website: "https://pear.vc", focus: ["TechBio", "Digital Health"], aum: 500, portfolio: "Guardant, Viz.ai", aumStr: "$500M", stage: "Pre-Seed / Seed", type: "Pure VC" },
+            { name: "Threshold Ventures", location: "Menlo Park, CA", website: "https://threshold.vc", focus: ["Digital Health", "TechBio"], aum: 2000, portfolio: "Livongo, Viz.ai, Talkspace", aumStr: "$2B", stage: "Series A", type: "Pure VC" },
             { name: "Playground Global", location: "Palo Alto, CA", website: "https://playground.global", focus: ["TechBio", "Deep Tech"], aum: 1200, portfolio: "Strand, Ultima, Virta", aumStr: "$1.2B", stage: "Series A / B", type: "Pure VC" },
             { name: "Innovation Endeavors", location: "Palo Alto, CA", website: "https://www.innovationendeavors.com", focus: ["TechBio"], aum: 1500, portfolio: "Freenome, Eikon, Zymergen", aumStr: "$1.5B", stage: "Early Stage", type: "Pure VC" },
             { name: "Two Sigma Ventures", location: "New York, NY", website: "https://twosigmaventures.com", focus: ["TechBio"], aum: 2000, portfolio: "Recursion, Zymergen", aumStr: "$2B", stage: "Early Stage", type: "Pure VC" },
@@ -329,20 +329,20 @@
 
             // --- ACCELERATORS & INCUBATORS ---
             { name: "IndieBio (SOSV)", location: "San Francisco, CA / NY", website: "https://indiebio.co", focus: ["SynBio", "Biotech", "TechBio"], aum: 1500, portfolio: "Memphis Meats, Clara Foods, Geltor", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "Y Combinator", location: "San Francisco, CA", website: "https://www.ycombinator.com", focus: ["Biotech", "Health Tech", "TechBio"], aum: 1000, portfolio: "Ginkgo Bioworks, Atomwise, Transcriptic", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "Techstars Healthcare", location: "Los Angeles, CA / Denver", website: "https://www.techstars.com", focus: ["Health Tech", "MedTech"], aum: 500, portfolio: "Zipline, PillPack (Alum), Owlet", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "MassChallenge HealthTech", location: "Boston, MA", website: "https://masschallenge.org/programs-healthtech", focus: ["Health Tech", "Biotech"], aum: 0, portfolio: "100+ startups annually", aumStr: "Zero Equity", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "StartX", location: "Palo Alto, CA", website: "https://startx.com", focus: ["MedTech", "Biotech", "Health Tech"], aum: 0, portfolio: "Kodiak, Freenome, Eargo", aumStr: "Zero Equity", stage: "Growth / Stage Agnostic", type: "Accelerator / Incubator" },
-            { name: "Matter", location: "Chicago, IL", website: "https://matter.health", focus: ["Health Tech"], aum: 0, portfolio: "Incubator for 200+ startups", aumStr: "N/A (Incubator)", stage: "Incubation", type: "Accelerator / Incubator" },
+            { name: "Y Combinator", location: "San Francisco, CA", website: "https://www.ycombinator.com", focus: ["Biotech", "Digital Health", "TechBio"], aum: 1000, portfolio: "Ginkgo Bioworks, Atomwise, Transcriptic", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
+            { name: "Techstars Healthcare", location: "Los Angeles, CA / Denver", website: "https://www.techstars.com", focus: ["Digital Health", "MedTech"], aum: 500, portfolio: "Zipline, PillPack (Alum), Owlet", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
+            { name: "MassChallenge HealthTech", location: "Boston, MA", website: "https://masschallenge.org/programs-healthtech", focus: ["Digital Health", "Biotech"], aum: 0, portfolio: "100+ startups annually", aumStr: "Zero Equity", stage: "Pre-Seed", type: "Accelerator / Incubator" },
+            { name: "StartX", location: "Palo Alto, CA", website: "https://startx.com", focus: ["MedTech", "Biotech", "Digital Health"], aum: 0, portfolio: "Kodiak, Freenome, Eargo", aumStr: "Zero Equity", stage: "Growth / Stage Agnostic", type: "Accelerator / Incubator" },
+            { name: "Matter", location: "Chicago, IL", website: "https://matter.health", focus: ["Digital Health"], aum: 0, portfolio: "Incubator for 200+ startups", aumStr: "N/A (Incubator)", stage: "Incubation", type: "Accelerator / Incubator" },
             { name: "QB3", location: "San Francisco, CA", website: "https://qb3.org", focus: ["Biotech"], aum: 0, portfolio: "Pivot Bio, Caribou Biosciences", aumStr: "N/A (Incubator)", stage: "Incubation", type: "Accelerator / Incubator" },
             { name: "Petri (Pillar VC)", location: "Boston, MA", website: "https://www.petri.bio", focus: ["SynBio", "Biotech"], aum: 300, portfolio: "Gameto, Wild Microbes", aumStr: "N/A (Fund Backed)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "Cedars-Sinai Accelerator", location: "Los Angeles, CA", website: "https://csaccelerator.com", focus: ["Health Tech", "MedTech"], aum: 0, portfolio: "WELL Health, AppliedVR", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "Plug and Play Health", location: "Sunnyvale, CA", website: "https://www.plugandplaytechcenter.com/health/", focus: ["Health Tech"], aum: 0, portfolio: "Guardant Health, Honeybook", aumStr: "N/A (Platform)", stage: "Early Stage", type: "Accelerator / Incubator" },
-            { name: "Blueprint Health", location: "New York, NY", website: "https://www.blueprinthealth.org", focus: ["Health Tech"], aum: 0, portfolio: "AdhereTech, Board Vitals", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
+            { name: "Cedars-Sinai Accelerator", location: "Los Angeles, CA", website: "https://csaccelerator.com", focus: ["Digital Health", "MedTech"], aum: 0, portfolio: "WELL Health, AppliedVR", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
+            { name: "Plug and Play Health", location: "Sunnyvale, CA", website: "https://www.plugandplaytechcenter.com/health/", focus: ["Digital Health"], aum: 0, portfolio: "Guardant Health, Honeybook", aumStr: "N/A (Platform)", stage: "Early Stage", type: "Accelerator / Incubator" },
+            { name: "Blueprint Health", location: "New York, NY", website: "https://www.blueprinthealth.org", focus: ["Digital Health"], aum: 0, portfolio: "AdhereTech, Board Vitals", aumStr: "N/A (Cohort Based)", stage: "Pre-Seed", type: "Accelerator / Incubator" },
             { name: "MedTech Innovator", location: "Los Angeles, CA", website: "https://medtechinnovator.org", focus: ["MedTech"], aum: 0, portfolio: "Largest MedTech Accelerator", aumStr: "Non-Profit", stage: "Early Stage", type: "Accelerator / Incubator" },
             { name: "Endless Frontier Labs", location: "New York, NY", website: "https://endlessfrontierlabs.com", focus: ["Biotech", "TechBio"], aum: 0, portfolio: "NYU Stern affiliated", aumStr: "Zero Equity", stage: "Pre-Seed", type: "Accelerator / Incubator" },
             { name: "Nucleate", location: "Boston, MA / National", website: "https://nucleate.xyz", focus: ["Biotech", "SynBio"], aum: 0, portfolio: "Student-led Bio venture", aumStr: "Non-Profit", stage: "Pre-Seed", type: "Accelerator / Incubator" },
-            { name: "Bioverge", location: "San Francisco, CA", website: "https://bioverge.com", focus: ["Health Tech", "Biotech"], aum: 0, portfolio: "Ligandal, Notable", aumStr: "N/A (Platform)", stage: "Pre-Seed / Seed", type: "Accelerator / Incubator" }
+            { name: "Bioverge", location: "San Francisco, CA", website: "https://bioverge.com", focus: ["Digital Health", "Biotech"], aum: 0, portfolio: "Ligandal, Notable", aumStr: "N/A (Platform)", stage: "Pre-Seed / Seed", type: "Accelerator / Incubator" }
         ];
         
         let currentData = [...vcData];
@@ -396,7 +396,7 @@
                 // Determine icon based on primary focus
                 let icon = '🧬'; // Default
                 if (firm.focus.includes('TechBio')) icon = '💻';
-                if (firm.focus.includes('Health Tech')) icon = '🏥';
+                if (firm.focus.includes('Digital Health')) icon = '🏥';
                 if (firm.focus.includes('MedTech')) icon = '⚙️';
                 if (firm.focus.includes('SynBio')) icon = '🧪';
 
@@ -405,7 +405,7 @@
                 if(firm.type === "Pure VC") typeColor = "bg-teal-50 text-teal-800 border border-teal-100";
                 if(firm.type.includes("Corporate")) typeColor = "bg-blue-50 text-blue-800 border border-blue-100";
                 if(firm.type.includes("Creation")) typeColor = "bg-purple-50 text-purple-800 border border-purple-100";
-                if(firm.type.includes("Lifecycle")) typeColor = "bg-orange-50 text-orange-800 border border-orange-100";
+                if(firm.type.includes("Crossover")) typeColor = "bg-orange-50 text-orange-800 border border-orange-100";
                 if(firm.type.includes("Accelerator")) typeColor = "bg-yellow-50 text-yellow-800 border border-yellow-100";
 
                 tr.innerHTML = `
@@ -503,7 +503,7 @@
                 if (activeTab === 'Pure VC') matchesTab = firm.type === 'Pure VC';
                 if (activeTab === 'Corporate') matchesTab = firm.type.includes('Corporate');
                 if (activeTab === 'Creation') matchesTab = firm.type.includes('Creation');
-                if (activeTab === 'Lifecycle') matchesTab = firm.type.includes('Lifecycle');
+                if (activeTab === 'Crossover') matchesTab = firm.type.includes('Crossover');
                 if (activeTab === 'Accelerator') matchesTab = firm.type.includes('Accelerator');
                 
                 return matchesSearch && matchesLoc && matchesFocus && matchesTab;
